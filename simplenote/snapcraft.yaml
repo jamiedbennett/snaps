@@ -1,0 +1,25 @@
+name: simplenote
+version: 1.0.1
+summary: The simplest way to keep notes.
+description: The simplest way to keep notes. Light, clean, and free. Cross-platform with support for synced notes, tagging, lists, sharing, and more.
+apps:
+  simplenote:
+    command: wrapper
+    plugs: [unity7, opengl, network]
+
+parts:
+  simplenote:
+    plugin: copy
+    stage-packages:
+      - libnss3
+      - fontconfig-config
+      - gnome-themes-standard
+    files:
+      Simplenote: Simplenote
+      wrapper: usr/bin/wrapper
+      icudtl.dat: icudtl.dat
+      snapshot_blob.bin: snapshot_blob.bin
+      natives_blob.bin: natives_blob.bin
+      resources* : resources
+      libnode.so: usr/lib/x86_64-linux-gnu/libnode.so
+      libffmpeg.so: usr/lib/x86_64-linux-gnu/libffmpeg.so
