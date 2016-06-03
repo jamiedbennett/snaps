@@ -1,8 +1,8 @@
 name: dstat 
 version: 0.7.3
 summary: Versatile resource statistic tool 
-description: This is my-snap's description  # a longer description for the snap
-confinement: devmode  # use "strict" to enforce system access only via declared interfaces
+description: dstat is a versatile replacement for vmstat, iostat, and ifstat.
+confinement: strict
 
 apps:
   dstat:
