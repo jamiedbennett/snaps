@@ -19,3 +19,11 @@ parts:
     plugin: copy
     files: 
       python2: usr/bin/
+    snap:
+      - -usr/lib/gcc
+      - -usr/lib/mime
+      - -usr/lib/x86_64-linux-gnu
+      - -lib/x86_64-linux-gnu
+      - usr/bin/python2
+      - usr/bin/python2.7
+      - usr/bin/dstat
