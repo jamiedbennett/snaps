@@ -1,0 +1,18 @@
+name: taskwarrior-jamiebennett 
+version: 2.5.1 
+summary: Taskwarrior manages your TODO list from the command line. 
+description: Taskwarrior is Free and Open Source Software that manages your TODO list from the command line. It is flexible, fast, and ubobtrusive. It does its job then gets out of your way.
+confinement: strict # use "strict" to enforce system access only via declared interfaces
+
+build-packages: [libgcc1, libgnutls-dev, libstdc++6, uuid-dev]
+
+apps:
+  taskwarrior:
+    command: bin/task
+    plugs: [home]
+parts:
+  taskwarrior:
+    plugin: cmake 
+    make-parameters: 
+      - -DCMAKE_BUILD_TYPE=release .
+    source: https://taskwarrior.org/download/task-2.5.1.tar.gz
